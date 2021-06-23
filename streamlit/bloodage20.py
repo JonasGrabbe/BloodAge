@@ -15,7 +15,7 @@ from sklearn.ensemble import RandomForestClassifier
 st.image('./titleApp4.png')
 
 # Patient Input Parameters
-st.sidebar.header('Patient Input Parameters')
+st.sidebar.header('Your Blood Marker Values')
 
 def user_input_features():
     Gender = st.sidebar.radio('Gender',['Female','Male'])
@@ -72,7 +72,7 @@ prediction = load_model.predict(df)
 aging_rate = 'Coming soon!'
 
 st.write("""
-           **Oxcitas blood age prototype 23.06.2021**
+           **Deep Blood Biomarker Prototype June 2021**
            """)
 #st.subheader('Sepsis:')
 #st.write("""
@@ -82,7 +82,43 @@ st.write("""
             #""")
 st.subheader('Input:')
 st.write(df)
-st.subheader('Predicted Blood Age:')
-st.write(prediction)
-st.subheader('Blood aging rate:')
+st.subheader('Biological Blood Age:')
+st.header(int(prediction))
+st.subheader('Biological blood aging rate:')
 st.write(aging_rate)
+st.write('---')
+st.header('The Project:')
+st.write('**Idea:** We aim to create a blood based biological aging clock which helps the user to track and to slow down their aging. To calculate the biological age we will develop an AI based algorithm which will take into account personal data (e.g. height, weight, gender) and about 20-30 common laboratory blood test values to predict biological age. As a result, the user will receive helpful information alongside their biological age which based on the AI algorithm would be most effective to slow the rate of their aging (e.g. exercise, diet, supplements).')
+st.write("""
+
+            **Input:** Blood parameters (19) and gender.
+
+            **Output:** Biological blood age.
+
+            **Data:** NHANES data base extract (~41k samples).
+
+            **Imputation:** Missing values were dropped and remaining features were normalized.
+
+            **Model:** Gradient boosted trees, implemented in Python with the XGBoost package. Tree branching was limited to nine levels, learning rate was set to 0.03 and included were no more than 25000 trees in the final ensemble.
+
+
+            """)
+#st.image('./infrastructure.png')
+st.image('./pics.png')
+st.write("""
+
+            **Results:** Mean absolute error (MAE) of 7,73 years.
+
+
+
+            """)
+#st.image('./ageVSpredict01.png')
+st.write("""
+
+            **Objective:** A MAE of about 6 years with less then 20 blood values, biological indications (mortality risk), aging rate and personalized feedback.
+
+            """)
+st.write('---')
+st.header('The App')
+st.write('Once we have met our objective, we will develop a graphical user interface on top of the model and offer the opportunity for everybody interested to have their biological blood age calculated and tracked. A part from the blood biomarkers there a further biomarkers we can integrate within the app.')
+st.image('./app2.png')
