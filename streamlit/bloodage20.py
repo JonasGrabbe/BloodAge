@@ -89,7 +89,7 @@ st.write(aging_rate)
 st.write('---')
 st.header('The Project:')
 st.write('**Idea:** We aim to create a blood based biological aging clock which helps the user to track and to slow down their aging. To calculate the biological age we will develop an AI based algorithm which will take into account personal data (e.g. height, weight, gender) and about 20-30 common laboratory blood test values to predict biological age. As a result, the user will receive helpful information alongside their biological age which based on the AI algorithm would be most effective to slow the rate of their aging (e.g. exercise, diet, supplements).')
-st.write('**The Prototype:** Our ML Engine prototype has been trained on 1.64 millions of data points derived from clinical trail data bases.')
+st.write('**Prototype:** Our ML Engine has been trained on 1.64 millions of data points derived from clinical trail data bases.')
 #st.write("""
 
 #            **Input:** Blood parameters (19) and gender.
